@@ -1,9 +1,5 @@
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +8,7 @@ import java.util.List;
  * github.com/bipinkh
  */
 
-public class Splitter {
+public class FileUtils {
 
     public static List<byte[]> split(File f) {
         byte[] buffer = new byte[constants.FILE_CHUNK_SIZE];
@@ -54,10 +50,10 @@ public class Splitter {
         System.out.println("Total parts :: "+ parts.size());
 
         //encrypt
-        List<byte[]> encParts = crypto.encryptParts(parts);
+        List<byte[]> encParts = CryptoUtils.encryptParts(parts);
 
         //decrypt
-        List<byte[]> decParts = crypto.decryptParts(encParts);
+        List<byte[]> decParts = CryptoUtils.decryptParts(encParts);
 
         File f = new File(outputFileName);
         f.getParentFile().mkdirs();

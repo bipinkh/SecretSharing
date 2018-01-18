@@ -10,7 +10,7 @@ import java.util.Random;
  * github.com/bipinkh
  */
 
-public class shamirs {
+public class SecretSharing {
 
     static String secretString = " this is the chemical formula of coca cola ";
     static Random rand;

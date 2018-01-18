@@ -8,7 +8,7 @@ import java.util.List;
  * @author bipin khatiwada
  * github.com/bipinkh
  */
-public class crypto {
+public class CryptoUtils {
     public static AES aes;
 
     static {

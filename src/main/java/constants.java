@@ -9,6 +9,7 @@ public class constants {
     public static int NUMBER_THRESHOLD =  12;
     public static int FILE_CHUNK_SIZE = 1024 * 64 ; //64 kb size
 
+    //for aes cipher
     public static String PASSWORD="thisIs16BitPasss";
     public static int IVSIZE =16;
 
