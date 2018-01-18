@@ -4,10 +4,13 @@
  */
 public class constants {
 
-    public static Integer RANDOM_SEED = 945156;
-    public static Integer NUMBER_SHARES = 16 ;
-    public static Integer NUMBER_THRESHOLD =  12;
-    public static Integer FILE_CHUNK_SIZE = 1024 * 64 ; //64 kb size
+    public static int RANDOM_SEED = 945156;
+    public static int NUMBER_SHARES = 16 ;
+    public static int NUMBER_THRESHOLD =  12;
+    public static int FILE_CHUNK_SIZE = 1024 * 64 ; //64 kb size
+
+    public static String PASSWORD="thisIs16BitPasss";
+    public static int IVSIZE =16;
 
 }
 
