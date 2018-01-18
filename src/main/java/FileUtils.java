@@ -40,26 +40,4 @@ public class FileUtils {
         return true;
     }
 
-
-    public static void main(String[] args) throws Exception {
-        String fileName = "src//main//resources//testfile.txt";
-        String outputFileName = "src//main//resources//testOPfile.txt";
-
-        //split
-        List<byte[]> parts = split(new File(fileName));
-        System.out.println("Total parts :: "+ parts.size());
-
-        //encrypt
-        List<byte[]> encParts = CryptoUtils.encryptParts(parts);
-
-        //decrypt
-        List<byte[]> decParts = CryptoUtils.decryptParts(encParts);
-
-        File f = new File(outputFileName);
-        f.getParentFile().mkdirs();
-        f.createNewFile();
-        merge(decParts, f);
-
-
-    }
 }
