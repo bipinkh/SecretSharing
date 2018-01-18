@@ -1,7 +1,9 @@
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,19 +45,18 @@ public class Splitter {
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         String fileName = "src//main//resources//testfile.txt";
-
-//        List<byte[]> parts = split(new File());
+        String outputFileName = "src//main//resources//testOPfile.txt";
 
         List<byte[]> parts = split(new File(fileName));
+
         System.out.println("Total parts :: "+ parts.size());
 
-//        for (int i = 0; i<= parts.size(); i++){
-//            System.out.println("Part "+String.valueOf(i)+"\n"+ new String(parts.get(0)));
-////            System.out.println("Part "+String.valueOf(i)+"\n"+ parts.get(0));
-//        }
-
+        File f = new File(outputFileName);
+        f.getParentFile().mkdirs();
+        f.createNewFile();
+        merge(parts, f);
 
 
     }
