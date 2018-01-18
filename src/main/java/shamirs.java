@@ -14,13 +14,13 @@ public class shamirs {
 
     static String secretString = " this is the chemical formula of coca cola ";
     static Random rand;
-    static Integer seed = 945156;
+
     static Integer maxShares = 5;
     static Integer thresholdToRecover = 3;
 
     public static void main(String[] args) {
 
-        rand = new Random(seed);
+        rand = new Random(constants.RANDOM_SEED);
 
         //get splitted parts
         Part[] parts = split();
