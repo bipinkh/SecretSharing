@@ -1,3 +1,5 @@
+package secretsharing;
+
 /**
  * @author bipin khatiwada
  * github.com/bipinkh

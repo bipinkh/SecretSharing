@@ -1,1 +1,1 @@
-# SecretSharing
+# secretsharing.SecretSharing

@@ -1,3 +1,5 @@
+package secretsharing;
+
 import org.mitre.secretsharing.Part;
 import org.mitre.secretsharing.Secrets;
 import org.mitre.secretsharing.codec.PartFormats;
@@ -12,7 +14,9 @@ import java.util.Random;
 
 public class SecretSharing {
 
-    static String secretString = " this is the chemical formula of coca cola ";
+    static String secretString = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum sagittis lacus, laoreet luctus ligula laoreet ut. Vestibulum ullamcorper accumsan velit vel vehicula. Proin tempor lacus arcu. Nunc at elit condimentum, semper nisi et, condimentum mi. In venenatis blandit nibh at sollicitudin. Vestibulum dapibus mauris at orci maximus pellentesque. Nullam id elementum ipsum. Suspendisse cursus lobortis viverra. Proin et erat at mauris tincidunt porttitor vitae ac dui.\n" +
+            "\n" +
+            "Donec vulputate lorem tortor, nec fermentum nibh bibendum vel. Lorem ipsum dolor sit amet, consectetur adipisc";
     static Random rand;
 
     static Integer maxShares = 5;
@@ -22,15 +26,18 @@ public class SecretSharing {
 
         rand = new Random(constants.RANDOM_SEED);
 
+        System.out.println("splitting ... ");
+
         //get splitted parts
         Part[] parts = split();
+
+        System.out.println("splitted !");
 
         for (int i = 0; i < parts.length; i++) {
             System.out.println(" Part number " + String.valueOf(i) + " ::");
             String formatted = PartFormats.currentStringFormat().format(parts[i]);  //convert part to string
             System.out.println(formatted);
         }
-
 
         //join result from all parts
         byte[] joinedResult = join(parts);

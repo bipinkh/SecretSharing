@@ -1,3 +1,5 @@
+package secretsharing;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -41,13 +43,13 @@ public class AES {
         byte[] keyBytes = new byte[16];
         //digest.digest(byte of string x) gives hash value
         System.arraycopy(digest.digest(), 0, keyBytes, 0, keyBytes.length);
-        myKey = new SecretKeySpec(keyBytes, "AES");
+        myKey = new SecretKeySpec(keyBytes, "secretsharing.AES");
     }
 
     //encryption method
     public byte[] encryption(byte[] bytePlainText) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException
     {
-        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+        Cipher cipher = Cipher.getInstance("secretsharing.AES/CBC/PKCS5Padding");
         cipher.init(Cipher.ENCRYPT_MODE, myKey, ivParameterSpec );
         byte[] byteResult = cipher.doFinal(bytePlainText);
         return byteResult;
@@ -56,7 +58,7 @@ public class AES {
     //decryption method
     public byte[] decryption(byte[] ciphertext) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException
     {
-        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+        Cipher cipher = Cipher.getInstance("secretsharing.AES/CBC/PKCS5Padding");
         cipher.init(Cipher.DECRYPT_MODE,myKey, ivParameterSpec);
         byte[] originalMessage = cipher.doFinal(ciphertext);
         return originalMessage;
