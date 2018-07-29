@@ -19,13 +19,13 @@
 //        String outputFileName = "src//main//resources//testOPfile.txt";
 //
 //        //split
-//        List<byte[]> parts = secretsharing.FileUtil.split(new File(fileName));
+//        List<byte[]> parts = fileshares.FileUtil.split(new File(fileName));
 //        System.out.println("Total parts :: " + parts.size());
 //
 //        File f = new File(outputFileName);
 //        f.getParentFile().mkdirs();
 //        f.createNewFile();
-//        secretsharing.FileUtil.merge(parts, f);
+//        fileshares.FileUtil.merge(parts, f);
 //
 //    }
 //
@@ -36,7 +36,7 @@
 //        String outputFileName = "src//main//resources//testOPfile.txt";
 //
 //        //split
-//        List<byte[]> parts = secretsharing.FileUtil.split(new File(fileName));
+//        List<byte[]> parts = fileshares.FileUtil.split(new File(fileName));
 //        System.out.println("Total parts :: " + parts.size());
 //
 //        //encrypt
@@ -48,7 +48,7 @@
 //        File f = new File(outputFileName);
 //        f.getParentFile().mkdirs();
 //        f.createNewFile();
-//        boolean mergeSuccess = secretsharing.FileUtil.merge(decParts, f);
+//        boolean mergeSuccess = fileshares.FileUtil.merge(decParts, f);
 //        assertTrue(mergeSuccess);
 //    }
 //}
